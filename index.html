@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        /* Modern CSS Reset & Variable Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #f9f9fb;
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent: #0066cc;
+            --card-bg: #ffffff;
+            --border: #e5e5ea;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        /* Layout Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styling */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        /* Articles Section */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .article-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .article-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .read-more {
+            color: var(--accent);<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        /* Modern CSS Reset & Variable Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #f9f9fb;
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent: #0066cc;
+            --card-bg: #ffffff;
+            --border: #e5e5ea;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        /* Layout Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header Styling */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        /* Articles Section */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .article-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .article-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .article-card { padding: 20px; }
+            .article-title { font-size: 1.35rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>charxpalak</h1>
+            <p>Welcome to my digital space. Here, I share deep dives, guides, and personal perspectives(Raqamli makonimga xush kelibsiz. Bu yerda men chuqur tahlillar, qo‘llanmalar va shaxsiy qarashlarimni ulashaman).</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="articles-list">
+
+        </section>
+    </main>
+
+</body>
+</html>
+            
+    </style>
+</head>
+<body>
+</html>
