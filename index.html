@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif; /* Adabiy va klassik shrift */
+            font-family: 'Georgia', 'Times New Roman', serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
@@ -34,10 +34,10 @@
             margin: 0 auto;
         }
 
-        /* HEADER USLUBI */
+        /* HEADER */
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid var(--border);
         }
@@ -56,28 +56,24 @@
             font-style: italic;
         }
 
-        /* GRID TIZIMI (MAQOLALARNI YONMA-YON QILISH) */
-        .articles-list {
-            display: table;
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 20px; /* Kartalar orasidagi masofa */
-        }
-
-        .articles-row {
-            display: table-row;
+        /* GRID TIZIMI */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         /* MAQOLA KARTASI */
         .article-card {
-            display: table-cell;
-            width: 50%; /* 2 ta ustun bo'lishi uchun */
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 8px;
             border: 1px solid var(--border);
-            vertical-align: top;
             box-shadow: 0 4px 6px rgba(45, 36, 30, 0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .article-meta {
@@ -101,16 +97,37 @@
             color: var(--text-muted);
         }
 
+        /* QISQA KO'RINISH REJIMI */
         .article-excerpt {
             color: var(--text-muted);
             font-size: 1rem;
-            margin-bottom: 20px;
-            /* Faqat qisqa qismini ko'rsatish uslubi */
+            margin-bottom: 15px;
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* TO'LIQ MATN YASHIRIN HOLATI */
+        .full-content {
+            display: none;
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .full-content p {
+            margin-bottom: 15px;
+        }
+
+        /* ACTIVE REJIMDA EXCERPT YASHIRILIB, TO'LIQ MATN CHIQADI */
+        .article-card.expanded .article-excerpt {
+            display: none;
+        }
+
+        .article-card.expanded .full-content {
+            display: block;
         }
 
         /* READ MORE TUGMASI */
@@ -121,6 +138,9 @@
             font-size: 0.95rem;
             border-bottom: 1px dashed var(--accent);
             padding-bottom: 2px;
+            cursor: pointer;
+            align-self: flex-start;
+            margin-top: auto;
             transition: all 0.2s ease;
         }
 
@@ -139,17 +159,8 @@
 
         /* Mobil qurilmalar uchun moslashtirish */
         @media (max-width: 768px) {
-            .article-card {
-                display: block;
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            .articles-list {
-                display: block;
-                border-spacing: 0;
-            }
-            .articles-row {
-                display: block;
+            .articles-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -159,37 +170,80 @@
     <div class="container">
         <header>
             <h1>charxpalak</h1>
-            <p>Falsafiy mushohadalar, shaxsiy o‘sish va tillar olami.</p>
+            <p>Welcome to my digital space. Here, I share deep dives, guides, and personal perspectives(Raqamli makonimga xush kelibsiz. Bu yerda men chuqur tahlillar, qo‘llanmalar va shaxsiy qarashlarimni ulashaman).</p>
         </header>
 
-        <main class="articles-list">
-            <div class="articles-row">
+        <main class="articles-grid">
 
-                <article class="article-card">
-                    <div class="article-meta">Iyun 2026 • 5 Min Mutolaa</div>
+            <article class="article-card" id="article-uz">
+                <div>
+                    <div class="article-meta">4-Iyun 2026 • 5 Min Mutolaa</div>
                     <h2 class="article-title">Ichki Tashnalik Paradoksi: Nega Ishtiyoqimiz Birdan Alangalanib, Tezgina Soʻnadi?</h2>
-                    <p class="article-excerpt">
-                        Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida buni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek, oʻsha narsaga ruhiy tashnalikni his qiladi...
-                    </p>
-                    <a href="#" class="read-more">Toʻliq oʻqish →</a>
-                </article>
+                    
+                    <div class="article-excerpt">
+                        Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida buni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek...
+                    </div>
 
-                <article class="article-card">
-                    <div class="article-meta">June 2026 • 5 Min Read</div>
+                    <div class="full-content">
+                        <p>Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida bu holatni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek, oʻsha narsaga ruhiy tashnalikni his qiladi. Bu hissiyot xuddi koinotdagi ulkan yulduz portlashiga (supernovaga) oʻxshaydi: birdaniga ichingizda qandaydir yangi ishni boshlash yoki hayotingizni tubdan oʻzgartirish uchun ulkan energiya va shiddatli xohish paydo boʻladi.</p>
+                        <p>Bu oʻrinda haqli savol tugʻiladi: bu yaxshi hissiyotmi yoki yomon? Javob shuki, u ikki tigʻli pichoq kabidir. Bir tomondan, bu ajoyib hissiyot, chunki u — bizning ichki uygʻonishimiz, rivojlanishga boʻlgan potensial intilishimiz va qotib qolgan nuqtadan joyimizdan jilishimiz uchun eng kuchli start hisoblanadi. Tashnalik boʻlmasa, harakat ham boʻlmaydi. Ammo ikkinchi tomondan, u aldamchi va xavflidir. Agar bu hissiyot faqat hayollar va vaqtinchalik joʻshqinlik darajasida qolib ketsa, u insonni ruhan charchatadi. Har safar boshlangan ish chala qolganda, inson oʻziga boʻlgan ishonchni yoʻqota boshlaydi.</p>
+                        <p>Bu hodisa hayotimizning turli jabhalarida namoyon boʻladi va buning eng asosiy turtkilaridan biri — bizni qurshab turgan muhitdir (environment). Atrofingizda doim mutolaa qiladigan insonlarni koʻrsangiz, sizda ham kitob oʻqishga nisbatan kuchli tashnalik uygʻonadi; hayolingizda ulkan kutubxona yaratishni maqsad qilasiz. Atrofingizda muvaffaqiyatli tadbirkorlar yoki sportchilar paydo boʻlsa, darhol hayotingizni oʻzgartigingiz keladi. Biroq, tashqi muhit bergan emotsional turtki vaqtinchalik xarakterga ega boʻlib, ma’lum bir vaqt oʻtib dastlabki hissiyotlar oʻrnini kundalik mehnat egallaganida, oʻsha dastlabki joʻshqinlik kamayib boradi.</p>
+                        <p>Xoʻsh, nega bu emotsional tashnalikni intizomga aylantirish shunchalik muhim? Javob: Ha, bu mutlaqo shart va hayotiy zarurdir. Sababi, motivatsiya va ishtiyoq faqat dvigatelni oʻt oldirish uchun kerak, lekin mashinani manzilga olib boradigan narsa — bu intizom (discipline) va tizimdir. Agar siz ichki tashnalikni qat’iy intizomga aylantira olmasangiz, oʻsha shiddatli energiya vaqt oʻtishi bilan shunchaki sovib, kutilmagan umidsizlikka aylanadi. Olov qanchalik tez yongan boʻlsa, uning kuli ham shunchalik tez soviydi. Haqiqiy natija ishtiyoq eng yuqori nuqtaga chiqqanda emas, balki oʻsha ishtiyoq soʻnganidan keyin ham har kuni zerikarli va qiyin yumushlarni takrorlay olish qobiliyatida, ya’ni intizomda namoyon boʻladi.</p>
+                    </div>
+                </div>
+                
+                <span class="read-more" onclick="toggleArticle('article-uz')">Toʻliq oʻqish →</span>
+            </article>
+
+            <article class="article-card" id="article-en">
+                <div>
+                    <div class="article-meta">June 4, 2026 • 5 Min Read</div>
                     <h2 class="article-title"><i>The Paradox of Inner Thirst: Why Our Passions Flare Up and Fade Away</i></h2>
-                    <p class="article-excerpt">
+                    
+                    <div class="article-excerpt" style="font-style: italic;">
                         At some point in our lives, we all experience a profound and recurring psychological phenomenon. In Russian, it is accurately captured by the word “жажда”. But what exactly is this inner thirst? “Жажда” is far more than a mere desire. It is an intense, almost visceral longing for a particular pursuit, goal, or transformation—comparable to the desperate thirst for water in a barren desert...
-                    </p>
-                    <a href="#" class="read-more">Read Full Article →</a>
-                </article>
+                    </div>
 
-            </div>
+                    <div class="full-content" style="font-style: italic;">
+                        <p>At some point in our lives, we all experience a profound and recurring psychological phenomenon. In Russian, it is accurately captured by the word “жажда”. But what exactly is this inner thirst? “Жажда” is far more than a mere desire. It is an intense, almost visceral longing for a particular pursuit, goal, or transformation—comparable to the desperate thirst for water in a barren desert. In my experience, this feeling mirrors a cosmic supernova: a sudden, overwhelming explosion of energy and intent that compels us to take on a new challenge or completely reshape our lives.</p>
+                        <p>This begs the question: is this a positive or a negative emotion? The truth is, it acts as a double-edged sword. On one hand, it is a magnificent force. It represents our internal awakening, our potential for growth, and the catalyst needed to push us out of stagnation. Without this initial thirst, momentum cannot exist. On the other hand, it is profoundly deceptive. If this intensity remains confined to fleeting excitement without being grounded in reality, it exhausts the mind. Each time a burning desire leaves a project unfinished, it chips away at our self-belief.</p>
+                        <p>This phenomenon manifests across various aspects of human life, and one of its most powerful catalysts is our surrounding environment. For instance, being surrounded by avid readers sparks an immediate, intense craving to dive into literature; we visualize buying grand bookshelves and filling them with knowledge. Similarly, being around entrepreneurs or fitness enthusiasts suddenly makes us want to launch businesses or adopt a rigorous lifestyle. The core challenge, however, is that external environmental stimuli are inherently temporary. Driven by initial excitement, we make a strong start, but as time passes and the novelty wears off, the initial rush fades, replaced by the mundane reality of daily effort.</p>
+                        <p>Why, then, is it so critical to transform this emotional thirst into structured discipline? The answer is an absolute yes. Motivation and emotional thirst are merely responsible for turning the ignition, but it is discipline that drives the vehicle to its ultimate destination. If you fail to convert that fleeting emotional thirst into consistency, that fiery energy inevitably turns into cold ash and bitter disappointment. True progress is not defined by how high your passion flares at the beginning, but by your ability to show up and do the work long after that initial rush has completely vanished.</p>
+                    </div>
+                </div>
+                
+                <span class="read-more" onclick="toggleArticle('article-en')">Read Full Article →</span>
+            </article>
+
         </main>
 
         <footer>
             <p>&copy; 2026 charxpalak. Hamma huquqlar himoyalangan.</p>
         </footer>
     </div>
+
+    <script>
+        function toggleArticle(articleId) {
+            var card = document.getElementById(articleId);
+            var btn = card.querySelector('.read-more');
+            
+            if (card.classList.contains('expanded')) {
+                card.classList.remove('expanded');
+                if(articleId === 'article-uz') {
+                    btn.textContent = 'Toʻliq oʻqish →';
+                } else {
+                    btn.textContent = 'Read Full Article →';
+                }
+            } else {
+                card.classList.add('expanded');
+                if(articleId === 'article-uz') {
+                    btn.textContent = 'Yopish ↑';
+                } else {
+                    btn.textContent = 'Close ↑';
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
