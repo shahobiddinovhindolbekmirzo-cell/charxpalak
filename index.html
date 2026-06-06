@@ -62,6 +62,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 25px;
             margin-top: 30px;
+            align-items: start;
         }
 
         /* MAQOLA KARTASI */
@@ -71,9 +72,9 @@
             border-radius: 8px;
             border: 1px solid var(--border);
             box-shadow: 0 4px 6px rgba(45, 36, 30, 0.02);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            margin-bottom: 10px;
+            min-height: 400px;
+            display: block;
         }
 
         .article-meta {
@@ -175,64 +176,96 @@
 Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy tajribalar va shaxsiy izlanishlarim muhrlanadigan raqamli makon. Bu yerda men o‘zim guvoh bo‘lgan, o‘rgangan va his qilgan fikrlarimni o‘zbek hamda ingliz tillarida maqola ko‘rinishida ulashib boraman. 
  Chalg'ituvchi dunyoda tinch va sokin xonaga XUSH KELIBSIZ.</p>
         </header>
-        <main class="articles-grid">
-<div class="post-card" id="time-management-uz">
-    <div class="post-meta">6-iyun 2026 • 5 min mutolaa</div>
-    <h2 class="post-title">Kunni rejalashtirish</h2>
-    <div class="post-preview">
-        <p>Koʻpincha kunimiz qanday boshlanib, qanday tugaganini bilmay qolamiz. Ertalab ulkan maqsadlar bilan uygʻonamiz-u, lekin kechga borib hech narsaga ulgura olmaganimizni his qilamiz. Xoʻsh, nega shunday boʻladi? Inson hayotining eng muhim poydevorlaridan biri boʻlgan kunni rejalashtirish ortida qanday psixologik va neyrobiologik sirlar yotadi?</p>
-    </div>
-    <div id="content-time-uz" style="display: none; margin-top: 20px; border-top: 1px solid #f0eae4; padding-top: 15px;">
-        <h3>1. Kunni rejalashtirish nima va u bizga nimaga kerak?</h3>
-        <p>Kunni rejalashtirish — bu shunchaki qogʻozga bajariladigan ishlar roʻyxatini yozib qoʻyish emas. Bu sizning energiyangiz, vaqtingiz va eʼtiboringizni qayerga sarflashni belgilab beruvchi shaxsiy "Vaqt Xaritasi"dir.</p>
-        <h3>2. Rejasizlik oqibatlari: Yoʻqotilgan kunlar ssenariysi</h3>
-        <p>Aniq rejaning yoʻqligi sizni boshqalar belgilagan tartibga yoki shunchaki tasodifiy voqealar oqimiga boʻysundirib qoʻyadi. Muhim dars yoki loyihani qilish oʻrniga, ijtimoiy tarmoqlardagi tasodifiy videolarni tomosha qilib soatlab vaqt yoʻqotasiz.</p>
-        <h3>3. Miyaning holati: Miya bizni boshqaradimi yoki biz miyani?</h3>
-        <p>Agar siz tongni aniq rejasiz boshlasangiz, miyangiz buni oʻzicha talqin qiladi: "Ayni damda bajariladigan muhim ish yoʻq, demak mutlaqo xotirjam va begʻam boʻlishim mumkin". Reja — bu bizning miyamizga beradigan toʻgʻridan-toʻgʻri buyrugʻimizdir.</p>
-        <h3>4. Kechki afsus tuygʻusi</h3>
-        <p>Kunning eng ogʻir qismi — bu kechasi yostiqqa bosh qoʻygandagi hissiyotdir. Kunduzi miya bergan xotirjamlik kechga borib tugaydi va uning oʻrnini ogʻir afsus, ichki tushkunlik egallaydi.</p>
-        <h3>5. Rejalashtirishning jismoniy va hissiy foydalari</h3>
-        <ul>
-            <li><strong>Hissiy xotirjamlik:</strong> Stress darajasi keskin kamayadi.</li>
-            <li><strong>Jismoniy energiya:</strong> Tizimli tartib tufayli tana tetiklashadi.</li>
-            <li><strong>Muvaffaqiyat hissi:</strong> Oʻzingizga boʻlgan ishonch tiklanadi.</li>
-        </ul>
-    </div>
-    <div style="margin-top: 15px;">
-        <button class="read-more-btn" onclick="var c=document.getElementById('content-time-uz'); if(c.style.display==='none'){c.style.display='block'; this.innerText='Close ↑';}else{c.style.display='none'; this.innerText='Read More ↓'; this.parentElement.parentElement.scrollIntoView({behavior:'smooth'});}" style="background: none; border: none; color: #8b5a2b; font-weight: bold; cursor: pointer; padding: 5px 0; font-family: inherit; font-size: 1rem;">To'liq o'qish ↓</button>
-    </div>
-</div>
-
-        <main class="articles-grid">
-<div class="post-card" id="time-management-en">
-    <div class="post-meta">June 6, 2026 • 5 min read</div>
-    <h2 class="post-title">Daily planning</h2>
-    <div class="post-preview">
-        <p>Often, we find ourselves wondering where our day went. We wake up with ambitious goals, yet by nightfall, we realize we have barely scratched the surface of what we wanted to achieve. Why does this happen? What are the psychological and neurobiological forces hidden behind the simple act of planning our day?</p>
-    </div>
-    <div id="content-time-en" style="display: none; margin-top: 20px; border-top: 1px solid #f0eae4; padding-top: 15px;">
-        <h3>1. What is Daily Planning and Why Do We Need It?</h3>
-        <p>Daily planning is far more than just writing a checklist of errands. It is your personal "Time Blueprint"—a strategic guide that declares exactly where your energy, time, and focus will go.</p>
-        <h3>2. The Cost of Being Unplanned: Walking Without a Compass</h3>
-        <p>The absence of a clear structure forces you to adapt to other people's agendas or slide into random distractions. Instead of completing your essential tasks, you find yourself spending hours scrolling through social media feeds.</p>
-        <h3>3. Inside the Brain: Who is Controlling Whom?</h3>
-        <p>When a morning begins with zero structure, your brain immediately misinterprets the silence. A plan is essentially a clear, authoritative command that shifts your brain from comfort mode into executive action.</p>
-        <h3>4. The Nighttime Regret</h3>
-        <p>The heaviest toll of an unplanned day hits when your head touches the pillow. The temporary ease experienced during the afternoon evaporates, leaving behind a profound sense of regret.</p>
-        <h3>5. The Physical and Emotional Rewards of Structure</h3>
-        <ul>
-            <li><strong>Emotional Peace:</strong> Eliminates the ambient anxiety, vastly reducing stress levels.</li>
-            <li><strong>Physical Vitality:</strong> Systemizing periods for rest and work prevents burnout.</li>
-            <li><strong>Sense of Achievement:</strong> Checking off tasks provides a natural boost of satisfaction.</li>
-        </ul>
+      
+<main class="articles-grid">  
+<article class="article-card" id="time-management-uz">
+    <div>
+        <div class="article-meta">6-iyun 2026 • 5 min mutolaa</div>
+        <h2 class="article-title">Kunni rejalashtirish</h2>
+        <div class="article-excerpt">
+            Biz koʻpincha kunimiz qanday boshlanib, qanday yakun topganini sezmay qolamiz. Tongda ulkan maqsadlar, togʻni talqon qilgudek gʻayrat bilan uygʻonamiz-u, ammo quyosh botgach, qoʻlimizda deyarli hech qanday arzigulik natija yoʻqligini koʻrib hayron boʻlamiz. Vaqt xuddi barmoqlarimiz orasidan oqib ketayotgan qumdek gʻoyib boʻladi. Xoʻsh, nega biz oʻzimiz rejalashtirgan, qilishimiz shart boʻlgan ishlarga ulgurmay qolaveramiz?
+        </div>
+        <div class="full-content" id="content-time-uz">
+            <p>Biz koʻpincha kunimiz qanday boshlanib, qanday yakun topganini sezmay qolamiz. Tongda ulkan maqsadlar, togʻni talqon qilgudek gʻayrat bilan uygʻonamiz-u, ammo quyosh botgach, qoʻlimizda deyarli hech qanday arzigulik natija yoʻqligini koʻrib hayron boʻlamiz. Vaqt xuddi barmoqlarimiz orasidan oqib ketayotgan qumdek gʻoyib boʻladi. Xoʻsh, nega biz oʻzimiz rejalashtirgan, qilishimiz shart boʻlgan ishlarga ulgurmay qolaveramiz? Inson hayotining va muvaffaqiyatining eng muhim poydevorlaridan biri boʻlgan kunni rejalashtirish ortida aslida qanday psixologik va neyrobiologik sirlar yotadi?</p>
+            
+            <h3>1. Kunni rejalashtirish nima va u bizga nimaga kerak?</h3>
+            <p>Koʻpchilik kunni rejalashtirishni shunchaki qogʻoz qoralamasiga bajariladigan ishlar roʻyxatini (To-do list) chalkash qilib yozib qoʻyish deb oʻylaydi. Yoʻq, bu shunchaki mexanik harakat emas. Kunni rejalashtirish — bu sizning ichki energiyangiz, cheklangan vaqtingiz va eng qimmatli boyligingiz boʻlgan eʼtiboringizni qayerga va qanday sarflashni belgilab beruvchi shaxsiy "Vaqt Xaritasi"dir.</p>
+            <p>U bizga hayotimiz ustidan toʻliq nazorat oʻrnatish, betartiblik girdobidan qutulish va har bir soatni anglangan holda, mazmunli oʻtkazish uchun kerak. Rejali inson oʻz maqsadlariga eltadigan yoʻlni aniq koʻra oladi va mayda chalgʻituvchi omillarga vaqt sarflamaydi.</p>
+            
+            <h3>2. Rejasizlik oqibatlari: Yoʻqotilgan kunlar ssenariysi</h3>
+            <p>Tasavvur qiling, siz hech qanday manzilsiz, navigatorsiz va yoʻl belgilarisiz notanish bir ulkan shaharda mashina haydayapsiz. Yoqilgʻingiz tugayapti, lekin siz qayerga ketayotganingizni bilmaysiz. Rejasiz boshlangan kun aynan mana shu koʻrinishga ega.</p>
+            <p>Aniq rejaning yoʻqligi sizni oʻz hayotingiz egasi boʻlishdan mahrum qiladi va boshqalar belgilagan tartibga yoki shunchaki tasodifiy voqealar oqimiga boʻysundirib qoʻyadi. Masalan, siz bugun eng muhim loyihangizni tugatishni yoki chet tili darsingizni tayyorlashni koʻnglingizga tukkan edingiz. Ammo aniq vaqt va reja boʻlmagani sababli, doʻstingizning bitta qoʻngʻirogʻi, ijtimoiy tarmoqdagi tasodifiy videolarning cheksiz tasmasi sizni oʻz domiga tortadi. Natijada eng muhim ishlar chetda qolib, soatlaringiz havoga uchadi. Siz yoʻnalishini yoʻqotgan kema kabi tasodiflar shamolida oqib yurasiz.</p>
+            
+            <h3>3. Miyaning holati: Miya bizni boshqaradimi yoki biz miyani?</h3>
+            <p>Inson miyasi qanday ishlaydi? Agar siz tongni aniq va yozma rejasiz boshlasangiz, miyangiz bu holatda quyidagicha assotsiatsiya hosil qiladi va xulosa chiqaradi: "Ayni damda bajarilishi shart boʻlgan oʻta muhim va favqulodda ish yoʻq, demak biz mutlaqo xotirjam, xavfsiz va begʻam boʻlishimiz mumkin".</p>
+            <p>Miya tabiatan omon qolish instinktiga koʻra minimal energiya sarflashga va qulaylik zonasida qolishga dasturlangan. Shuning abolitionist, u buyruq kutadi. Agar unga aniq vazifa berilmasa, u sizni eng oson, energiyani minimal talab qiladigan va tezkor rohat (dofamin) beradigan ishlarga yoʻnaltiradi: uxlash, divanda yotish yoki telefon titish.</p>
+            <p>Bu vaziyatda siz miyangizni emas, miyangiz sizni oʻz qulaylik va dangasalik qonuniyatlari bilan boshqarayotgan boʻladi. Ammo, siz qogʻozga yoki ekranga "Soat 10:00 dan 11:30 gacha ingliz tili darsini oʻqiyman" deb yozib, unga aniq koordinata berganingizda, miyada neyronlar safarbarlik holatiga oʻtadi. Reja — bu bizning miyamizga beradigan toʻgʻridan-toʻgʻri strategik buyrugʻimizdir. Biz unga boʻysunishni emas, uni boshqarishni reja orqali oʻrganamiz.</p>
+            
+            <h3>4. Kechki afsus tuygʻusi</h3>
+            <p>Rejasiz oʻtgan kunning eng ogʻir, eng ogʻriqli qismi — bu kechasi yostiqqa bosh qoʻygandagi ruhiy holatdir. Kunduzi miya bizga taqdim etgan oʻsha soxta xotirjamlik va begʻamlik gadosi qorongʻu tushishi bilan oʻz kuchini yoʻqotadi. Uning oʻrnini ogʻir va ezuvchi afsus, ichki tushkunlik va aybdorlik hissi egallaydi.</p>
+            <p>Biz kunni deyarli hech narsa qilmasdan, oʻzimizga zarracha foyda keltirmasdan oʻtkazib yuborganimizni butun vujudimiz bilan his qilamiz. "Yana bir kunim bekor ketdi, men hech narsaga ulgura olmayapman" degan oʻylar inson ruhiyatini ich-etidan yemirib, uning oʻziga boʻlgan ishonchini parchalab tashlaydi. Bu hissiyot ertangi kunning ham samarasiz boshlanishiga zamin yaratadigan zaharli sikldir.</p>
+            
+            <h3>5. Rejalashtirishning jismoniy va hissiy foydalari</h3>
+            <p>Kunni tizimli ravishda rejalashtirish nafaqat sizni muvaffaqiyatli qiladi, vakillar organizmingizga ham ulkan jismoniy va hissiy foydalar keltiradi:</p>
+            <ul>
+                <li><strong>Hissiy xotirjamlik (Stressning kamayishi):</strong> Har bir ish oʻz vaqtida taqsimlanganda, miyadagi "Nima qilsam ekan? Qaysi biriga ulgursam ekan?" degan xaos va xavotir yoʻqoladi. Kortizol (stress gormoni) darajasi pasayadi.</li>
+                <li><strong>Jismoniy energiya va tetiklik:</strong> Tana qachon ishlashi, qachon ovqatlanishi va qachon toʻliq dam olishini aniq bilganda, biologik ritmlar joyiga tushadi. Natijada siz kamroq charchaysiz va jismoniy quvvatingiz ortadi.</li>
+                <li><strong>Sogʻlom dofamin muvozanati:</strong> Roʻyxatdagi bajarilgan har bir ish yoniga "bajarildi" belgisini qoʻyganingizda, miyada tabiiy va foydali dofamin gupurishi yuz beradi. Bu sizga gʻoliblik va chuqur qoniqish hissini hadya etadi.</li>
+            </ul>
+            
+            <h3>Xulosa</h3>
+            <p>Miyangiz sizni soxta xotirjamlik va begʻamlik tuzogʻiga tushirishiga yoʻl qoʻymang. Uni bugundanoq aniq, qatʼiy rejalar bilan boshqarishni qoʻlga oling. Shunda siz kun yakunini pushaymonlik va ezilish bilan emas, balki oʻz vaqti ustidan gʻalaba qozongan insonning faxrli gʻoliblik hissi bilan kutib olasiz!</p>
+        </div>
     </div>
     <div style="margin-top: 15px;">
-        <button class="read-more-btn" onclick="var c=document.getElementById('content-time-en'); if(c.style.display==='none'){c.style.display='block'; this.innerText='Close ↑';}else{c.style.display='none'; this.innerText='Read More ↓'; this.parentElement.parentElement.scrollIntoView({behavior:'smooth'});}" style="background: none; border: none; color: #8b5a2b; font-weight: bold; cursor: pointer; padding: 5px 0; font-family: inherit; font-size: 1rem;">Read More ↓</button>
+       <button class="read-more" onclick="toggleArticle(this)">To'liq o'qish ↓</button>
     </div>
-</div>
+</article>
 
-        <main class="articles-grid">
-<div class="post-card" id="critics-psychology-uz" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">   
+<article class="article-card" id="time-management-en">
+    <div>
+        <div class="article-meta">June 6, 2026 • 5 min read</div>
+        <h2 class="article-title">Daily Planning</h2>
+        <div class="article-excerpt">
+            Often, we find ourselves wondering where our day went. We wake up in the morning filled with ambitious goals and a strong drive to conquer the world, yet by nightfall, we realize we have barely scratched the surface of what we wanted to achieve. Time slips away like sand through our fingers. Why does this happen?
+        </div>
+        <div class="full-content" id="content-time-en">
+            <p>Often, we find ourselves wondering where our day went. We wake up in the morning filled with ambitious goals and a strong drive to conquer the world, yet by nightfall, we realize we have barely scratched the surface of what we wanted to achieve. Time slips away like sand through our fingers. Why does this happen? What are the psychological and neurobiological forces hidden behind the simple act of planning our day—or failing to do so?</p>
+            
+            <h3>1. What is Daily Planning and Why Do We Need It?</h3>
+            <p>Many people mistake daily planning for a boring, mechanical checklist of errands scrambled on a piece of paper. In reality, it is much more than that. Daily planning is your personal "Time Blueprint"—a strategic guide that explicitly declares where your energy, limited time, and most valuable resource, your focus, will be invested.</p>
+            <p>We need it to establish ultimate control over our lives, rescue ourselves from the whirlpool of chaos, and live every single hour intentionally. A well-planned individual sees a clear path toward their goals and naturally filters out trivial distractions.</p>
+            
+            <h3>2. The Cost of Being Unplanned: Walking Without a Compass</h3>
+            <p>Imagine driving a car in an unfamiliar, massive city without a map, signs, or GPS navigation. Your fuel is running low, but you have no idea where you are headed. Starting a day without a plan feels exactly like that.</p>
+            <p>The absence of a clear structure strips you of being the author of your day, forcing you to react blindly to other people's agendas or slide into the current of random occurrences. For instance, you might genuinely intend to study a language or finish a major project today. However, because there is no specific time assigned to it, a single phone call from a friend or the infinite scroll of social media easily hijacks your attention. Consequently, your essential tasks are left untouched, and your hours evaporate. You become like a ship that has lost its rudder, drifting wherever the wind blows.</p>
+            
+            <h3>3. Inside the Brain: Who is Controlling Whom?</h3>
+            <p>How does the human brain operate in this context? When a morning begins with zero structure, your brain immediately creates a specific association: "There are no critical or urgent tasks right now, so we can remain completely relaxed and carefree." By nature and survival instinct, the brain seeks to conserve energy and remain within its comfort zone. It constantly waits for an executive command. If you do not give it a concrete task, it defaults to the path of least resistance, steering you toward low-energy, instant-gratification activities that release quick dopamine, such as sleeping or mindless phone entertainment.</p>
+            <p>In this state, you are not controlling your brain; your brain is controlling you through its evolutionary bias for comfort. However, when you write down a concrete command—such as "From 10:00 AM to 11:30 AM, I will study my English assignment"—you activate the prefrontal cortex. Your neural networks shift into full mobilization mode. A plan is a direct, authoritative command issued to your brain. Through planning, we stop being passive passengers and become the captains of our minds.</p>
+            
+            <h3>4. The Nighttime Regret</h3>
+            <p>The heaviest toll of an unplanned day hits when your head touches the pillow. The temporary ease and carefreeness experienced during the afternoon completely evaporates in the dark, replaced by a profound sense of regret, internal frustration, and guilt.</p>
+            <p>We realize that an entire day has slipped away barren of accomplishment, yielding no growth or progress. The toxic thought of "Another day wasted, I am falling behind" begins to erode our self-esteem and confidence. This negative emotional state often paralyzes our motivation, setting up the next day for a similar cycle of unproductivity.</p>
+            
+            <h3>5. The Physical and Emotional Rewards of Structure</h3>
+            <p>Organizing your hours systematically does wonders not just for your external productivity, but for your internal well-being:</p>
+            <ul>
+                <li><strong>Emotional Peace (Reduced Anxiety):</strong> When every major task has an allocated time slot, the ambient anxiety of "What should I do next?" disappears. This directly lowers cortisol (the stress hormone) levels.</li>
+                <li><strong>Physical Vitality:</strong> When the body functions on a predictable schedule for work, nutrition, and recovery, our circadian rhythms stabilize. As a result, you experience less fatigue and sustained physical energy.</li>
+                <li><strong>Healthy Dopamine Loops:</strong> Crossing out a completed task on your schedule triggers a natural release of dopamine. This rewards you with a authentic sense of victory, self-satisfaction, and deep contentment.</li>
+            </ul>
+            
+            <h3>Conclusion</h3>
+            <p>Do not allow your subconscious mind to lull you into a deceptive trap of comfort and passivity. Take back the wheel today by mastering your hours with a clear, written plan. By doing so, you will greet the end of your day not with the heavy burden of regret, but with the profound, victorious fulfillment of someone who conquered their time!</p>
+        </div>
+    </div>
+    <div style="margin-top: 15px;">
+     <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>   
+    </div>
+</article>
+
+<div class="article-card" id="critics-psychology-uz" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">   
 
 <div class="post-meta" style="font-size: 0.85rem; color: #8a7a6b; margin-bottom: 10px;">4-iyun 2026 • 4 daqiqalik mutolaa</div>
     <h2 class="post-title" style="margin-top: 0; margin-bottom: 15px; font-size: 1.6rem; color: #332211;">Nega Atrofimizdagilardan Ayb Qidiramiz? Tanqid Ortidagi Yashirin Haqiqatlar</h2>
@@ -261,12 +294,11 @@ Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy taj
         <p style="line-height: 1.6; color: #443322;"><strong>Umumiy maslahat:</strong> Agar oʻzingizda ham kimnidir tanqid qilish istagi paydo boʻlsa, toʻxtang va soʻrang: <em>"Men hozir nega uni tanqid qilyapman? Balki men ham unday boʻlishni istayotgandirman?"</em> Energiyamizni shaxsiy rivojlanishimizga qaratsak, hayotimiz ancha goʻzal boʻladi.</p>
     </div>
     
-    <div style="margin-top: 15px;">
-        <button class="read-more-btn" onclick="var c=document.getElementById('content-critics-uz'); if(c.style.display==='none'){c.style.display='block'; this.innerText='Close ↑';}else{c.style.display='none'; this.innerText='Read More ↓'; this.parentElement.parentElement.scrollIntoView({behavior:'smooth'});}" style="background: none; border: none; color: #8b5a2b; font-weight: bold; cursor: pointer; padding: 5px 0; font-family: inherit; font-size: 1rem;">To'liq o'qish ↓</button>
-    </div>
+   <div style="margin-top: 15px;">
+    <button class="read-more" onclick="toggleArticle(this)">To'liq o'qish ↓</button>
 </div>
-
-<div class="post-card" id="critics-psychology-en" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">
+</div>
+<div class="article-card" id="critics-psychology-en" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">
     
     <div class="post-meta" style="font-size: 0.85rem; color: #8a7a6b; margin-bottom: 10px;">June 4, 2026 • 4 min read</div>
     <h2 class="post-title" style="margin-top: 0; margin-bottom: 15px; font-size: 1.6rem; color: #332211;">Why Do We Find Fault in Others? The Hidden Truths Behind Criticism</h2>
@@ -296,7 +328,7 @@ Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy taj
     </div>
     
     <div style="margin-top: 15px;">
-        <button class="read-more-btn" onclick="var c=document.getElementById('content-critics-en'); if(c.style.display==='none'){c.style.display='block'; this.innerText='Close ↑';}else{c.style.display='none'; this.innerText='Read More ↓'; this.parentElement.parentElement.scrollIntoView({behavior:'smooth'});}" style="background: none; border: none; color: #8b5a2b; font-weight: bold; cursor: pointer; padding: 5px 0; font-family: inherit; font-size: 1rem;">Read More ↓</button>
+        <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>
     </div>
 </div>
 
@@ -317,7 +349,7 @@ Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy taj
                     </div>
                 </div>
                 
-                <span class="read-more" onclick="toggleArticle('article-uz')">Toʻliq oʻqish →</span>
+                <button class="read-more" onclick="toggleArticle(this)">Toʻliq oʻqish ↓</button>
             </article>
 
             <article class="article-card" id="article-en">
@@ -337,7 +369,7 @@ Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy taj
                     </div>
                 </div>
                 
-                <span class="read-more" onclick="toggleArticle('article-en')">Read Full Article →</span>
+                <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>
             </article>
 
         </main>
@@ -347,28 +379,25 @@ Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy taj
         </footer>
     </div>
 
-    <script>
-        function toggleArticle(articleId) {
-            var card = document.getElementById(articleId);
-            var btn = card.querySelector('.read-more');
-            
-            if (card.classList.contains('expanded')) {
-                card.classList.remove('expanded');
-                if(articleId === 'article-uz') {
-                    btn.textContent = 'Toʻliq oʻqish →';
-                } else {
-                    btn.textContent = 'Read Full Article →';
-                }
-            } else {
-                card.classList.add('expanded');
-                if(articleId === 'article-uz') {
-                    btn.textContent = 'Yopish ↑';
-                } else {
-                    btn.textContent = 'Close ↑';
-                }
-            }
-        }
-    </script>
+   <script>
+function toggleArticle(btn) {
+    const card = btn.closest('.article-card');
+    if (!card) return;
+
+    const fullContent = card.querySelector('.full-content');
+    if (!fullContent) return;
+
+    const isExpanded = card.classList.contains('expanded');
+
+    if (isExpanded) {
+        card.classList.remove('expanded');
+        btn.textContent = btn.textContent.includes('Read') ? 'Read More ↓' : "To'liq o'qish ↓";
+    } else {
+        card.classList.add('expanded');
+        btn.textContent = btn.textContent.includes('Read') ? 'Close ↑' : 'Yopish ↑';
+    }
+}
+</script>
 
 </body>
 </html>
