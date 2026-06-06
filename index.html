@@ -390,13 +390,23 @@ function toggleArticle(btn) {
     const isExpanded = card.classList.contains('expanded');
 
     if (isExpanded) {
+        // Yopish
         card.classList.remove('expanded');
         btn.textContent = btn.textContent.includes('Read') ? 'Read More ↓' : "To'liq o'qish ↓";
+        
+        // Sahifa sakrab ketmasligi uchun
+        const cardPosition = card.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: cardPosition - 20,  // biroz yuqoridan joylashtiradi
+            behavior: 'smooth'
+        });
     } else {
+        // Ochish
         card.classList.add('expanded');
         btn.textContent = btn.textContent.includes('Read') ? 'Close ↑' : 'Yopish ↑';
     }
 }
+</script>
 </script>
 
 </body>
