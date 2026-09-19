@@ -22,7 +22,7 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Adabiy va klassik shrift */
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
@@ -34,10 +34,10 @@
             margin: 0 auto;
         }
 
-        /* HEADER */
+        /* HEADER USLUBI */
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             padding-bottom: 20px;
             border-bottom: 2px solid var(--border);
         }
@@ -56,25 +56,28 @@
             font-style: italic;
         }
 
-        /* GRID TIZIMI */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 30px;
-            align-items: start;
+        /* GRID TIZIMI (MAQOLALARNI YONMA-YON QILISH) */
+        .articles-list {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px; /* Kartalar orasidagi masofa */
+        }
+
+        .articles-row {
+            display: table-row;
         }
 
         /* MAQOLA KARTASI */
         .article-card {
+            display: table-cell;
+            width: 50%; /* 2 ta ustun bo'lishi uchun */
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 8px;
             border: 1px solid var(--border);
+            vertical-align: top;
             box-shadow: 0 4px 6px rgba(45, 36, 30, 0.02);
-            margin-bottom: 10px;
-            min-height: 400px;
-            display: block;
         }
 
         .article-meta {
@@ -98,37 +101,16 @@
             color: var(--text-muted);
         }
 
-        /* QISQA KO'RINISH REJIMI */
         .article-excerpt {
             color: var(--text-muted);
             font-size: 1rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            /* Faqat qisqa qismini ko'rsatish uslubi */
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-
-        /* TO'LIQ MATN YASHIRIN HOLATI */
-        .full-content {
-            display: none;
-            color: var(--text-main);
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .full-content p {
-            margin-bottom: 15px;
-        }
-
-        /* ACTIVE REJIMDA EXCERPT YASHIRILIB, TO'LIQ MATN CHIQADI */
-        .article-card.expanded .article-excerpt {
-            display: none;
-        }
-
-        .article-card.expanded .full-content {
-            display: block;
         }
 
         /* READ MORE TUGMASI */
@@ -139,9 +121,6 @@
             font-size: 0.95rem;
             border-bottom: 1px dashed var(--accent);
             padding-bottom: 2px;
-            cursor: pointer;
-            align-self: flex-start;
-            margin-top: auto;
             transition: all 0.2s ease;
         }
 
@@ -160,8 +139,17 @@
 
         /* Mobil qurilmalar uchun moslashtirish */
         @media (max-width: 768px) {
-            .articles-grid {
-                grid-template-columns: 1fr;
+            .article-card {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .articles-list {
+                display: block;
+                border-spacing: 0;
+            }
+            .articles-row {
+                display: block;
             }
         }
     </style>
@@ -171,297 +159,113 @@
     <div class="container">
         <header>
             <h1>charxpalak</h1>
-            <p>🎡 Charxpalak — Izlanishlar va Tajribalar Kundaligi
-
-Charxpalak — bu shunchaki veb-sayt emas, balki hayotiy kuzatishlar, kasbiy tajribalar va shaxsiy izlanishlarim muhrlanadigan raqamli makon. Bu yerda men o‘zim guvoh bo‘lgan, o‘rgangan va his qilgan fikrlarimni o‘zbek hamda ingliz tillarida maqola ko‘rinishida ulashib boraman. 
- Chalg'ituvchi dunyoda tinch va sokin xonaga XUSH KELIBSIZ.</p>
+            <p>Falsafiy mushohadalar, shaxsiy o‘sish va tillar olami.</p>
         </header>
-      
-<main class="articles-grid"> 
 
-<article class="article-card" id="bad-habits-uz">
-    <div>
-        <div class="article-meta">9-iyun 2026 • 5 min mutolaa</div>
-        <h2 class="article-title">Yomon odatlar</h2>
-        <div class="article-excerpt">
-            Inson hayotidagi koʻplab salbiy xatti-harakatlar ildizi uning ichki kechinmalariga borib taqaladi. Yomon odatlar, odatda, zerikish, ichki alam, surunkali stress va shunga oʻxshash salbiy emotsiyalar ortidan paydo boʻladi.
-        </div>
-        <div class="full-content">
-            <p>Inson hayotidagi koʻplab salbiy xatti-harakatlar ildizi uning ichki kechinmalariga borib taqaladi. Yomon odatlar, odatda, inson hayotidagi zerikish, ichki alam, surunkali stress va shunga oʻxshash salbiy emotsiyalar ortidan kirib keladi. Agar insonning ruhiyati kuchsiz boʻlsa va u oʻz hissiyotlarini jilovlay olmasa, bu zararli odatlarning paydo boʻlishi va ildiz otishi judayam oson kechadi. Ruhiy boʻshliqni toʻldirish yoki ogʻriqli emotsiyalardan qochish istagi insonni ongsiz ravishda vaqtinchalik tasalli beruvchi zararli vositalarga bogʻlab qoʻyadi.</p>
-            
-            <h3>Yomon odatlar girdobiga tushib qolish osonmi?</h3>
-            <p>Ushbu zararli doiraga kirib qolish shunchalik osonki, inson oʻzi sezmagan holda buni kundalik hayot tarziga aylantirib oladi. Bir marta qilingan xato ongsiz ravishda takrorlanaveradi va yakunda inson shaxsiyatining bir qismiga aylanadi. Eng qizigʻi, "yomon odat" tushunchasi hamma uchun har xil va u koʻproq insonning eʼtiqodi hamda madaniyati bilan bogʻliqdir. Masalan, spirtli ichimliklar ichish musulmonlarda mutlaqo yomon odat va gunoh hisoblansa, boshqa din vakillarida yoki jamiyatlarda bu ishga bunday salbiy nazar bilan qaralmaydi. Binobarin, nimaning yomon yoki yaxshiligini insonning ichki qadriyatlari va iymoni belgilaydi.</p>
-            
-            <h3>Yomon odatlarni bartaraf qilish yoʻllari</h3>
-            <p>Har qanday chuqur ildiz otgan yomon odatni ham bemalol tark etsa boʻladi. Buning uchun eng birinchi shart — inson shunchaki qilayotgan ishi haqiqatdan ham zararli ekanligini ich-ichidan tan olishi va uni yoʻqotishga chin dildan harakat qilishi kerak. Biz bilamizki, yomon odatlarni muntazam qilib yurishning asosiy sabablaridan biri — insonning boʻsh vaqti koʻpligidir. Shuning uchun ularni bartaraf qilishning eng samarali usuli — yomon odat oʻrniga boshqa bir foydali, yaxshi odatni shakllantirishdir. Miyamizni boʻsh qoldirmasdan, oʻsha boʻsh vaqtni chiroyli va xayrli amallar, sevimli mashgʻulotlar bilan toʻldirishimiz kerak.</p>
-            
-            <h3>Yomon odatlarsiz hayot</h3>
-            <p>Zararli zanjirlardan qutulish va ularsiz yashash inson hayotini butunlay yangi bosqichga olib chiqadi. Yomon odatlarsiz kechadigan hayot insonni ham aqlan, ham jismonan sogʻlom hamda har qachongidan kuchli qiladi. Oʻz irodasini qoʻlga olgan va hissiyotlariga asir boʻlmagan inson oʻz kelajagini ongli ravishda qura oladi. Pok eʼtiqod, sogʻlom tana va xotirjam aql hayotning haqiqiy goʻzalligini his qilish uchun eng katta mukofotdir.</p>
-        </div>
-    </div>
-    <div style="margin-top: 15px;">
-        <button class="read-more" onclick="toggleArticle(this)">To'liq o'qish ↓</button>
-    </div>
-</article>
+        <main class="articles-list">
+            <div class="articles-row">
 
-<article class="article-card" id="bad-habits-en">
-    <div>
-        <div class="article-meta">June 9, 2026 • 5 min read</div>
-        <h2 class="article-title">Bad Habits</h2>
-        <div class="article-excerpt">
-            The roots of many negative behaviors in human life trace back to our internal emotional struggles. Bad habits usually emerge from boredom, deep-seated resentment, chronic stress, and similar negative emotions.
-        </div>
-        <div class="full-content">
-            <p>The roots of many negative behaviors in human life trace back to our internal emotional struggles. Bad habits usually emerge from boredom, deep-seated resentment, chronic stress, and similar negative emotions. If a person's psychological state is weak and they fail to control and master their emotions, it becomes incredibly easy for these destructive habits to form and take root. The desire to fill an emotional void or escape from painful feelings unconsciously chains a person to temporary and harmful comforts.</p>
-            
-            <h3>What Are Bad Habits and How Are They Formed?</h3>
-            <p>The roots of many negative behaviors in human life trace back to our internal emotional struggles. Bad habits usually emerge from boredom, deep-seated resentment, chronic stress, and similar negative emotions. If a person's psychological state is weak and they fail to control and master their emotions, it becomes incredibly easy for these destructive habits to form and take root. The desire to fill an emotional void or escape from painful feelings unconsciously chains a person to temporary and harmful comforts.</p>
-            
-            <h3>Is It Easy to Fall Into the Trap of Bad Habits?</h3>
-            <p>Falling into this vicious cycle is so effortless that a person unconsciously turns these behaviors into their regular lifestyle. What starts as a one-time escape is repeated subconsciously until it becomes deeply embedded in daily life. Interestingly, the definition of a "bad habit" is subjective and differs from person to person, as it is heavily connected to an individual's personal faith and core beliefs. For instance, while drinking alcohol is considered a strictly bad habit and a major sin among Muslims, people of other religions or cultures do not view this action with the same negativity. Therefore, a person's inner values and faith ultimately define what is truly harmful or acceptable.</p>
-            
-            <h3>Ways to Eliminate Bad Habits</h3>
-            <p>Any deeply rooted bad habit can be successfully abandoned and overcome. The very first condition for change is that a person must fully acknowledge that their actions are genuinely harmful and genuinely commit from the bottom of their heart to eliminate them. We know that one of the primary reasons people repeatedly engage in bad habits is having too much idle, unstructured free time. Consequently, the best strategy to eliminate them is to build a positive, healthy habit to take the place of the bad one. Instead of leaving the mind idle, we must fill that empty time with productive habits, learning, and meaningful activities.</p>
-            
-            <h3>A Life Without Bad Habits</h3>
-            <p>Breaking free from these toxic chains and living without them elevates a person's life to a completely new level. A life free of bad habits makes an individual both mentally and physically healthy and exceptionally strong. A person who takes control of their will and refuses to become a slave to their fleeting emotions can consciously design their own future. A pure faith, a healthy body, and a calm mind are the ultimate rewards for experiencing the true beauty of life.</p>
-        </div>
-    </div>
-    <div style="margin-top: 15px;">
-        <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>
-    </div>
-</article>
- 
-<article class="article-card" id="time-management-uz">
-    <div>
-        <div class="article-meta">6-iyun 2026 • 5 min mutolaa</div>
-        <h2 class="article-title">Kunni rejalashtirish</h2>
-        <div class="article-excerpt">
-            Biz koʻpincha kunimiz qanday boshlanib, qanday yakun topganini sezmay qolamiz. Tongda ulkan maqsadlar, togʻni talqon qilgudek gʻayrat bilan uygʻonamiz-u, ammo quyosh botgach, qoʻlimizda deyarli hech qanday arzigulik natija yoʻqligini koʻrib hayron boʻlamiz. Vaqt xuddi barmoqlarimiz orasidan oqib ketayotgan qumdek gʻoyib boʻladi. Xoʻsh, nega biz oʻzimiz rejalashtirgan, qilishimiz shart boʻlgan ishlarga ulgurmay qolaveramiz?
-        </div>
-        <div class="full-content" id="content-time-uz">
-            <p>Biz koʻpincha kunimiz qanday boshlanib, qanday yakun topganini sezmay qolamiz. Tongda ulkan maqsadlar, togʻni talqon qilgudek gʻayrat bilan uygʻonamiz-u, ammo quyosh botgach, qoʻlimizda deyarli hech qanday arzigulik natija yoʻqligini koʻrib hayron boʻlamiz. Vaqt xuddi barmoqlarimiz orasidan oqib ketayotgan qumdek gʻoyib boʻladi. Xoʻsh, nega biz oʻzimiz rejalashtirgan, qilishimiz shart boʻlgan ishlarga ulgurmay qolaveramiz? Inson hayotining va muvaffaqiyatining eng muhim poydevorlaridan biri boʻlgan kunni rejalashtirish ortida aslida qanday psixologik va neyrobiologik sirlar yotadi?</p>
-            
-            <h3>1. Kunni rejalashtirish nima va u bizga nimaga kerak?</h3>
-            <p>Koʻpchilik kunni rejalashtirishni shunchaki qogʻoz qoralamasiga bajariladigan ishlar roʻyxatini (To-do list) chalkash qilib yozib qoʻyish deb oʻylaydi. Yoʻq, bu shunchaki mexanik harakat emas. Kunni rejalashtirish — bu sizning ichki energiyangiz, cheklangan vaqtingiz va eng qimmatli boyligingiz boʻlgan eʼtiboringizni qayerga va qanday sarflashni belgilab beruvchi shaxsiy "Vaqt Xaritasi"dir.</p>
-            <p>U bizga hayotimiz ustidan toʻliq nazorat oʻrnatish, betartiblik girdobidan qutulish va har bir soatni anglangan holda, mazmunli oʻtkazish uchun kerak. Rejali inson oʻz maqsadlariga eltadigan yoʻlni aniq koʻra oladi va mayda chalgʻituvchi omillarga vaqt sarflamaydi.</p>
-            
-            <h3>2. Rejasizlik oqibatlari: Yoʻqotilgan kunlar ssenariysi</h3>
-            <p>Tasavvur qiling, siz hech qanday manzilsiz, navigatorsiz va yoʻl belgilarisiz notanish bir ulkan shaharda mashina haydayapsiz. Yoqilgʻingiz tugayapti, lekin siz qayerga ketayotganingizni bilmaysiz. Rejasiz boshlangan kun aynan mana shu koʻrinishga ega.</p>
-            <p>Aniq rejaning yoʻqligi sizni oʻz hayotingiz egasi boʻlishdan mahrum qiladi va boshqalar belgilagan tartibga yoki shunchaki tasodifiy voqealar oqimiga boʻysundirib qoʻyadi. Masalan, siz bugun eng muhim loyihangizni tugatishni yoki chet tili darsingizni tayyorlashni koʻnglingizga tukkan edingiz. Ammo aniq vaqt va reja boʻlmagani sababli, doʻstingizning bitta qoʻngʻirogʻi, ijtimoiy tarmoqdagi tasodifiy videolarning cheksiz tasmasi sizni oʻz domiga tortadi. Natijada eng muhim ishlar chetda qolib, soatlaringiz havoga uchadi. Siz yoʻnalishini yoʻqotgan kema kabi tasodiflar shamolida oqib yurasiz.</p>
-            
-            <h3>3. Miyaning holati: Miya bizni boshqaradimi yoki biz miyani?</h3>
-            <p>Inson miyasi qanday ishlaydi? Agar siz tongni aniq va yozma rejasiz boshlasangiz, miyangiz bu holatda quyidagicha assotsiatsiya hosil qiladi va xulosa chiqaradi: "Ayni damda bajarilishi shart boʻlgan oʻta muhim va favqulodda ish yoʻq, demak biz mutlaqo xotirjam, xavfsiz va begʻam boʻlishimiz mumkin".</p>
-            <p>Miya tabiatan omon qolish instinktiga koʻra minimal energiya sarflashga va qulaylik zonasida qolishga dasturlangan. Shuning abolitionist, u buyruq kutadi. Agar unga aniq vazifa berilmasa, u sizni eng oson, energiyani minimal talab qiladigan va tezkor rohat (dofamin) beradigan ishlarga yoʻnaltiradi: uxlash, divanda yotish yoki telefon titish.</p>
-            <p>Bu vaziyatda siz miyangizni emas, miyangiz sizni oʻz qulaylik va dangasalik qonuniyatlari bilan boshqarayotgan boʻladi. Ammo, siz qogʻozga yoki ekranga "Soat 10:00 dan 11:30 gacha ingliz tili darsini oʻqiyman" deb yozib, unga aniq koordinata berganingizda, miyada neyronlar safarbarlik holatiga oʻtadi. Reja — bu bizning miyamizga beradigan toʻgʻridan-toʻgʻri strategik buyrugʻimizdir. Biz unga boʻysunishni emas, uni boshqarishni reja orqali oʻrganamiz.</p>
-            
-            <h3>4. Kechki afsus tuygʻusi</h3>
-            <p>Rejasiz oʻtgan kunning eng ogʻir, eng ogʻriqli qismi — bu kechasi yostiqqa bosh qoʻygandagi ruhiy holatdir. Kunduzi miya bizga taqdim etgan oʻsha soxta xotirjamlik va begʻamlik gadosi qorongʻu tushishi bilan oʻz kuchini yoʻqotadi. Uning oʻrnini ogʻir va ezuvchi afsus, ichki tushkunlik va aybdorlik hissi egallaydi.</p>
-            <p>Biz kunni deyarli hech narsa qilmasdan, oʻzimizga zarracha foyda keltirmasdan oʻtkazib yuborganimizni butun vujudimiz bilan his qilamiz. "Yana bir kunim bekor ketdi, men hech narsaga ulgura olmayapman" degan oʻylar inson ruhiyatini ich-etidan yemirib, uning oʻziga boʻlgan ishonchini parchalab tashlaydi. Bu hissiyot ertangi kunning ham samarasiz boshlanishiga zamin yaratadigan zaharli sikldir.</p>
-            
-            <h3>5. Rejalashtirishning jismoniy va hissiy foydalari</h3>
-            <p>Kunni tizimli ravishda rejalashtirish nafaqat sizni muvaffaqiyatli qiladi, vakillar organizmingizga ham ulkan jismoniy va hissiy foydalar keltiradi:</p>
-            <ul>
-                <li><strong>Hissiy xotirjamlik (Stressning kamayishi):</strong> Har bir ish oʻz vaqtida taqsimlanganda, miyadagi "Nima qilsam ekan? Qaysi biriga ulgursam ekan?" degan xaos va xavotir yoʻqoladi. Kortizol (stress gormoni) darajasi pasayadi.</li>
-                <li><strong>Jismoniy energiya va tetiklik:</strong> Tana qachon ishlashi, qachon ovqatlanishi va qachon toʻliq dam olishini aniq bilganda, biologik ritmlar joyiga tushadi. Natijada siz kamroq charchaysiz va jismoniy quvvatingiz ortadi.</li>
-                <li><strong>Sogʻlom dofamin muvozanati:</strong> Roʻyxatdagi bajarilgan har bir ish yoniga "bajarildi" belgisini qoʻyganingizda, miyada tabiiy va foydali dofamin gupurishi yuz beradi. Bu sizga gʻoliblik va chuqur qoniqish hissini hadya etadi.</li>
-            </ul>
-            
-            <h3>Xulosa</h3>
-            <p>Miyangiz sizni soxta xotirjamlik va begʻamlik tuzogʻiga tushirishiga yoʻl qoʻymang. Uni bugundanoq aniq, qatʼiy rejalar bilan boshqarishni qoʻlga oling. Shunda siz kun yakunini pushaymonlik va ezilish bilan emas, balki oʻz vaqti ustidan gʻalaba qozongan insonning faxrli gʻoliblik hissi bilan kutib olasiz!</p>
-        </div>
-    </div>
-    <div style="margin-top: 15px;">
-       <button class="read-more" onclick="toggleArticle(this)">To'liq o'qish ↓</button>
-    </div>
-</article>
+                <article class="article-card">
+                    <div class="article-meta">Sentyabr 2026 • 4 Min Mutolaa</div>
+                    <h2 class="article-title">Nima uchun universitetlar stipendiya beradi?</h2>
+                    <p class="article-excerpt">
+                          ## Universitetlar stipendiya berishining asosiy sabablari
 
-<article class="article-card" id="time-management-en">
-    <div>
-        <div class="article-meta">June 6, 2026 • 5 min read</div>
-        <h2 class="article-title">Daily Planning</h2>
-        <div class="article-excerpt">
-            Often, we find ourselves wondering where our day went. We wake up in the morning filled with ambitious goals and a strong drive to conquer the world, yet by nightfall, we realize we have barely scratched the surface of what we wanted to achieve. Time slips away like sand through our fingers. Why does this happen?
-        </div>
-        <div class="full-content" id="content-time-en">
-            <p>Often, we find ourselves wondering where our day went. We wake up in the morning filled with ambitious goals and a strong drive to conquer the world, yet by nightfall, we realize we have barely scratched the surface of what we wanted to achieve. Time slips away like sand through our fingers. Why does this happen? What are the psychological and neurobiological forces hidden behind the simple act of planning our day—or failing to do so?</p>
-            
-            <h3>1. What is Daily Planning and Why Do We Need It?</h3>
-            <p>Many people mistake daily planning for a boring, mechanical checklist of errands scrambled on a piece of paper. In reality, it is much more than that. Daily planning is your personal "Time Blueprint"—a strategic guide that explicitly declares where your energy, limited time, and most valuable resource, your focus, will be invested.</p>
-            <p>We need it to establish ultimate control over our lives, rescue ourselves from the whirlpool of chaos, and live every single hour intentionally. A well-planned individual sees a clear path toward their goals and naturally filters out trivial distractions.</p>
-            
-            <h3>2. The Cost of Being Unplanned: Walking Without a Compass</h3>
-            <p>Imagine driving a car in an unfamiliar, massive city without a map, signs, or GPS navigation. Your fuel is running low, but you have no idea where you are headed. Starting a day without a plan feels exactly like that.</p>
-            <p>The absence of a clear structure strips you of being the author of your day, forcing you to react blindly to other people's agendas or slide into the current of random occurrences. For instance, you might genuinely intend to study a language or finish a major project today. However, because there is no specific time assigned to it, a single phone call from a friend or the infinite scroll of social media easily hijacks your attention. Consequently, your essential tasks are left untouched, and your hours evaporate. You become like a ship that has lost its rudder, drifting wherever the wind blows.</p>
-            
-            <h3>3. Inside the Brain: Who is Controlling Whom?</h3>
-            <p>How does the human brain operate in this context? When a morning begins with zero structure, your brain immediately creates a specific association: "There are no critical or urgent tasks right now, so we can remain completely relaxed and carefree." By nature and survival instinct, the brain seeks to conserve energy and remain within its comfort zone. It constantly waits for an executive command. If you do not give it a concrete task, it defaults to the path of least resistance, steering you toward low-energy, instant-gratification activities that release quick dopamine, such as sleeping or mindless phone entertainment.</p>
-            <p>In this state, you are not controlling your brain; your brain is controlling you through its evolutionary bias for comfort. However, when you write down a concrete command—such as "From 10:00 AM to 11:30 AM, I will study my English assignment"—you activate the prefrontal cortex. Your neural networks shift into full mobilization mode. A plan is a direct, authoritative command issued to your brain. Through planning, we stop being passive passengers and become the captains of our minds.</p>
-            
-            <h3>4. The Nighttime Regret</h3>
-            <p>The heaviest toll of an unplanned day hits when your head touches the pillow. The temporary ease and carefreeness experienced during the afternoon completely evaporates in the dark, replaced by a profound sense of regret, internal frustration, and guilt.</p>
-            <p>We realize that an entire day has slipped away barren of accomplishment, yielding no growth or progress. The toxic thought of "Another day wasted, I am falling behind" begins to erode our self-esteem and confidence. This negative emotional state often paralyzes our motivation, setting up the next day for a similar cycle of unproductivity.</p>
-            
-            <h3>5. The Physical and Emotional Rewards of Structure</h3>
-            <p>Organizing your hours systematically does wonders not just for your external productivity, but for your internal well-being:</p>
-            <ul>
-                <li><strong>Emotional Peace (Reduced Anxiety):</strong> When every major task has an allocated time slot, the ambient anxiety of "What should I do next?" disappears. This directly lowers cortisol (the stress hormone) levels.</li>
-                <li><strong>Physical Vitality:</strong> When the body functions on a predictable schedule for work, nutrition, and recovery, our circadian rhythms stabilize. As a result, you experience less fatigue and sustained physical energy.</li>
-                <li><strong>Healthy Dopamine Loops:</strong> Crossing out a completed task on your schedule triggers a natural release of dopamine. This rewards you with a authentic sense of victory, self-satisfaction, and deep contentment.</li>
-            </ul>
-            
-            <h3>Conclusion</h3>
-            <p>Do not allow your subconscious mind to lull you into a deceptive trap of comfort and passivity. Take back the wheel today by mastering your hours with a clear, written plan. By doing so, you will greet the end of your day not with the heavy burden of regret, but with the profound, victorious fulfillment of someone who conquered their time!</p>
-        </div>
-    </div>
-    <div style="margin-top: 15px;">
-     <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>   
-    </div>
-</article>
+Universitetlarda stipendiya berishning bir nechta asosiy sabablari mavjud. Universitetlar buni ochiqchasiga aytmasligi mumkin, ammo bu sabablar deyarli barcha ta’lim muassasalarida uchraydi.
 
-<div class="article-card" id="critics-psychology-uz" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">   
+* **Eng iqtidorli talabalarni jalb qilish.** Universitetlar eng malakali nomzodlarni — a’lo baholarga ega, ilmiy tadqiqot olib borish salohiyati yuqori yoki universitet nufuzini uzoq muddat davomida oshira oladigan liderlik qobiliyatiga ega talabalarni jalb qilish uchun stipendiyalardan foydalanadi.
 
-<div class="post-meta" style="font-size: 0.85rem; color: #8a7a6b; margin-bottom: 10px;">4-iyun 2026 • 4 daqiqalik mutolaa</div>
-    <h2 class="post-title" style="margin-top: 0; margin-bottom: 15px; font-size: 1.6rem; color: #332211;">Nega Atrofimizdagilardan Ayb Qidiramiz? Tanqid Ortidagi Yashirin Haqiqatlar</h2>
-    
-    <div class="post-preview">
-        <p style="margin-bottom: 0; line-height: 1.6; color: #443322;">Biz har kuni hayotda, ijtimoiy tarmoqlarda yoki ish joyimizda hamma narsadan xato topadigan, insonlar va voqealarni tinimsiz tanqid qiladigan odamlarga duch kelamiz. Baʼzan oʻzimiz ham bilmagan holda mana shunday "kritik"ka aylanib qolamiz. Xoʻsh, insonni tinimsiz tanqid qilishga undaydigan asosiy sabablar nimalardan iborat?</p>
-    </div>
+* **Talabalar tarkibining xilma-xilligini oshirish.** Xalqaro talabalar universitetga yangi g‘oyalar, turli madaniy tajribalar va global aloqalarni olib kiradi. Stipendiyalar esa ta’lim olish imkoniyatini faqat moddiy imkoniyati yuqori bo‘lganlar bilan cheklanib qolmasligini ta’minlashning asosiy vositalaridan biridir.
 
-   <div class="full-content" id="content-critics-uz" style="margin-top: 20px; border-top: 1px solid #f0eae4; padding-top: 15px;">
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 20px; margin-bottom: 10px;">1. Insonlar nega boshqalarni tanqid qiladi?</h3>
-        <p style="line-height: 1.6; color: #443322;">Insonning boshqalarni tanqid qilishi koʻpincha uning oʻz ichki dunyosidagi muammolardan darak beradi. Buni quyidagi toʻrtta asosiy omil bilan tushuntirish mumkin:</p>
-        
-        <ul style="padding-left: 20px; line-height: 1.7; color: #443322;">
-            <li style="margin-bottom: 8px;"><strong>Ustunlikni hazm qila olmaslik:</strong> Agar biror kishi qaysidir jihatdan kritik insonning oʻzidan ustunroq boʻlsa, bu unda ichki noqulaylik tugʻdiradi. Bu holatda tanqid — qarshisidagi odamning yutuqlarini pasaytirish va oʻzini u bilan tenglashtirish uchun vositadir.</li>
-            <li style="margin-bottom: 8px;"><strong>Aybdorlik hissidan qochish:</strong> Baʼzan insonlar oʻzlarining mutlaqo daxli boʻlmagan salbiy vaziyatlarda ham ich-ichidan oʻzlarini aybdor his qiladilar. Oʻsha vaziyatni yoki odamni keskin tanqid qilish orqali oʻzlaridagi aybdorlik hissini yoʻqotishga urinishadi.</li>
-            <li style="margin-bottom: 8px;"><strong>Muvaffaqiyatni koʻra olmaslik (Hasad):</strong> Boshqalarning erishayotgan yutuqlari baʼzi insonlarda hasad tuygʻusini uygʻotadi. Uni tabriklash oʻrniga, kamchilik topishga urinish ortida aynan koʻra olmaslik hissi yotadi.</li>
-            <li style="margin-bottom: 8px;"><strong>Kasbdoshlar va sohadagi raqobat:</strong> Koʻpincha bir sohadagi odamlar bir-birlarini koʻproq tanqid qilishadi. Buning sababi, oʻsha sohada yetarlicha muvaffaqiyatga erisha olmagan kritik odam, boshqa muvaffaqiyatli hamkasbini koʻra olmasligidir.</li>
-        </ul>
+* **Universitet reytingi va nufuzini oshirish.** Ko‘plab xalqaro reyting tizimlari xorijiy talabalar soni va ilmiy tadqiqotlar natijalarini hisobga oladi. Stipendiyalar esa kuchli xalqaro nomzodlarni universitetga jalb qilish orqali ushbu ko‘rsatkichlarni yaxshilashga yordam beradi.
 
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 25px; margin-bottom: 10px;">2. Tanqid qilish yaxshimi yoki yomon?</h3>
-        <p style="line-height: 1.6; color: #443322;"><strong>Foydali (Konstruktiv) tanqid:</strong> Agar tanqid aniq dalillarga asoslangan, shaxsiyatga tegmagan holda va kamchilikni tuzatishga yordam berish maqsadida aytilsa, bu yaxshi. U oʻsishga xizmat qiladi.</p>
-        <p style="line-height: 1.6; color: #443322;"><strong>Zararli (Destruktiv) tanqid:</strong> Agar tanqid faqatgina kamsitish, masxara qilish yoki shunchaki ichki alamni sochish uchun ishlatilsa, bu juda yomondir va jamiyatda negativlik tarqatadi.</p>
+* **Talabalar soni va daromadni barqaror saqlash.** Bu biroz romantik bo‘lmagan, ammo juda real sabab. Universitetlar faoliyat yuritishi uchun barqaror miqdorda talabaga muhtoj. Stipendiyalar kuchli talabalarni jalb qilish va bo‘sh o‘rinlarni to‘ldirishning samarali vositasi hisoblanadi. Masalan, 2026-yilda AQShda viza siyosatining kuchaytirilishi ayrim universitetlarda xalqaro talabalar sonining taxminan 20% ga kamayishiga hissa qo‘shdi. Bu holat ayrim universitetlarda byudjet bilan bog‘liq jiddiy muammolarni keltirib chiqarishi kutilmoqda. Aynan shunday bosimlar universitetlarni stipendiya siyosatiga yanada katta e’tibor qaratishga undaydi.
 
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 25px; margin-bottom: 10px;">3. Xulosa va Maslahat</h3>
-        <p style="line-height: 1.6; color: #443322;">Agar atrofingizda hamma narsani tanqid qiladigan insonlarni koʻrsangiz, ulardan xafa boʻlmang. Ularning tanqidi sizning yomonligingizdan emas, balki ularning oʻz ichki dunyosidagi muammolardan darak beradi.</p>
-        <p style="line-height: 1.6; color: #443322;"><strong>Umumiy maslahat:</strong> Agar oʻzingizda ham kimnidir tanqid qilish istagi paydo boʻlsa, toʻxtang va soʻrang: <em>"Men hozir nega uni tanqid qilyapman? Balki men ham unday boʻlishni istayotgandirman?"</em> Energiyamizni shaxsiy rivojlanishimizga qaratsak, hayotimiz ancha goʻzal boʻladi.</p>
-    </div>
-    
- <div style="margin-top: 15px;">
-    <button class="read-more" onclick="toggleArticle(this)">To'liq o'qish ↓</button>
-</div> 
-</div>
-<div class="article-card" id="critics-psychology-en" style="border: 1px solid #e1d7cd; padding: 25px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); background-color: #fff;">
-    
-    <div class="post-meta" style="font-size: 0.85rem; color: #8a7a6b; margin-bottom: 10px;">June 4, 2026 • 4 min read</div>
-    <h2 class="post-title" style="margin-top: 0; margin-bottom: 15px; font-size: 1.6rem; color: #332211;">Why Do We Find Fault in Others? The Hidden Truths Behind Criticism</h2>
-    
-    <div class="post-preview">
-        <p style="margin-bottom: 0; line-height: 1.6; color: #443322;">Every day, whether in life, on social media, or in our workplaces, we encounter people who constantly find flaws in everything and criticize individuals and events without pause. Sometimes, without even realizing it, we become those critics ourselves. So, what are the primary reasons that drive someone to be continuously critical?</p>
-    </div>
+* **Donorlar va universitet missiyalarini amalga oshirish.** Ko‘plab stipendiyalar muayyan donorlarning ta’lim olish imkoniyatlarini kengaytirish haqidagi istagi asosida tashkil etiladi. Masalan, stipendiya birinchi avlod universitet talabalariga, muayyan mutaxassislikka, ma’lum bir hududdan kelgan talabalarga yoki boshqa maxsus guruhlarga mo‘ljallangan bo‘lishi mumkin. Bunday holatlarda qaror faqat universitetning qabul bo‘limi tomonidan qabul qilinmaydi — universitet donor oldidagi majburiyatini bajaradi.
 
-    <div class="full-content" id="content-critics-en" style="margin-top: 20px; border-top: 1px solid #f0eae4; padding-top: 15px;">
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 20px; margin-bottom: 10px;">1. The Core Reasons People Criticize</h3>
-        <p style="line-height: 1.6; color: #443322;">A person's constant criticism of others often signals issues within their own inner world. This behavior can be explained through four key factors:</p>
-        
-        <ul style="padding-left: 20px; line-height: 1.7; color: #443322;">
-            <li style="margin-bottom: 8px;"><strong>Inability to Accept Superiority:</strong> When someone excels beyond the critic, it sparks internal discomfort. Criticism becomes a tool used to diminish the other person's achievements and artificially level the playing field.</li>
-            <li style="margin-bottom: 8px;"><strong>Evading Guilt:</strong> Sometimes people feel an innate sense of guilt about negative situations. To escape this painful emotion and justify themselves, they harshly criticize the situation or the individuals involved—a classic subconscious defense mechanism.</li>
-            <li style="margin-bottom: 8px;"><strong>Envy of Success:</strong> The achievements of others often trigger a sense of envy in some individuals. Instead of celebrating someone's milestone, criticizing it stems directly from resentment.</li>
-            <li style="margin-bottom: 8px;"><strong>Professional Rivalry:</strong> Frequently, professionals within the same industry criticize each other the most. A specialist who has not achieved their desired level of success may begin looking for flaws in a peer who receives more recognition.</li>
-        </ul>
+## Universitet stipendiyalarining turlari
 
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 25px; margin-bottom: 10px;">2. Is Criticism Good or Bad?</h3>
-        <p style="line-height: 1.6; color: #443322;"><strong>Constructive Criticism:</strong> When criticism is evidence-based, avoids personal attacks, and, most importantly, is intended to help fix a mistake, it is beneficial. It serves growth and progress.</p>
-        <p style="line-height: 1.6; color: #443322;"><strong>Destructive Criticism:</strong> If its only aim is to demean, mock, discourage, or vent personal frustration, it becomes deeply harmful. It damages relationships and spreads negativity.</p>
+Stipendiya imkoniyatlarini odatda bir nechta asosiy turlarga ajratish mumkin.
 
-        <h3 style="color: #8b5a2b; font-size: 1.25rem; margin-top: 25px; margin-bottom: 10px;">3. Conclusion and Advice</h3>
-        <p style="line-height: 1.6; color: #443322;">When you encounter individuals who judge everything around them, do not take it personally. Remember, their criticism is rarely a reflection of your shortcoming; it is a manifestation of their own unfulfillment, unhappiness, or hidden envy.</p>
-        <p style="line-height: 1.6; color: #443322;"><strong>Advice for the Reader:</strong> If you feel a persistent urge to criticize someone, pause and ask yourself: <em>"Why am I projecting this criticism right now? What about them triggers me? Is it possible that I secretly desire what they have?"</em> Channeling that energy into our own growth makes our journey much more fulfilling.</p>
-    </div>
-    
-  <div style="margin-top: 15px;">
-    <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>
-</div>
-</div>
+**Merit scholarships (akademik yutuqlarga asoslangan stipendiyalar)** — a’lo baholar, yuqori test natijalari yoki liderlik qobiliyatlari orqali yuqori natijalarni namoyish etgan talabalar uchun beriladi.
 
-            <article class="article-card" id="article-uz">
-                <div>
-                    <div class="article-meta">4-Iyun 2026 • 5 Min Mutolaa</div>
+**Need-based scholarships (moliyaviy ehtiyojga asoslangan stipendiyalar)** — haqiqiy moliyaviy ehtiyojini isbotlay oladigan talabalarni qo‘llab-quvvatlaydi. Bunday stipendiyalar uchun odatda FAFSA arizasiga o‘xshash moliyaviy holatni tasdiqlovchi hujjatlar talab qilinadi.
+
+**Athletic scholarships (sport stipendiyalari)** — universitet yoki kollej ma’muriyati yoxud sport federatsiyalari tomonidan yuqori natijalarga ega deb topilgan sportchilar uchun beriladi. Bunday stipendiyalar AQSh universitetlari va kollejlarida keng tarqalgan.
+
+**Subject scholarships (muayyan fan yoki yo‘nalish uchun stipendiyalar)** — ma’lum bir sohada tahsil olishni istagan talabalar uchun mo‘ljallangan. Bunday stipendiyalar ko‘pincha ushbu sohaga qiziqadigan kompaniyalar, sanoat yetakchilari yoki shu sohada faoliyat yuritgan bitiruvchilar tomonidan taqdim etiladi.
+
+**Muayyan mamlakat yoki hudud uchun stipendiyalar** — ma’lum bir mamlakat yoki hududdan kelgan talabalar uchun mo‘ljallanadi. Ular ko‘pincha universitetning xalqaro talabalarni jalb qilish bo‘yicha strategik rejasining bir qismi hisoblanadi.
+
+**To‘liq moliyalashtiriladigan va qisman stipendiyalar** qamrovi jihatidan farq qiladi. Ayrim stipendiyalar kontrakt to‘lovi, turar joy va safar xarajatlarini ham qoplaydi. Boshqalari esa faqat kontrakt to‘lovining bir qismini qoplaydi.
+
+Bu farqlarni bilish muhim, chunki stipendiya shartlari chet elda o‘qish uchun tuzadigan umumiy moliyaviy rejangizga katta ta’sir ko‘rsatadi.
+
+## Stipendiyalarning talabalar uchun foydalari
+
+Eng ko‘rinib turgan foyda, albatta, moliyaviy yordamdir. Ammo stipendiyaning afzalliklari faqat buning o‘zi bilan cheklanmaydi.
+
+* Kontrakt to‘lovlarini kamaytiradi yoki butunlay qoplaydi va xorijda o‘qishni haqiqatda amalga oshirish mumkin bo‘lgan imkoniyatga aylantiradi.
+* Katta miqdorda talaba krediti olish ehtiyojini kamaytiradi va bitirgandan keyingi moliyaviy bosimni yengillashtiradi.
+* Rezyumega qo‘shiladigan muhim yutuq bo‘lib, kelajakdagi ish beruvchilar va magistratura/doktorantura dasturlariga nomzodning salohiyatini ko‘rsatadi.
+* Ko‘pincha oddiy talabalar uchun mavjud bo‘lmagan mentorlik va networking imkoniyatlarini taqdim etadi.
+* Stipendiya dasturi bilan bog‘liq maxsus akademik resurslar va tadbirlardan foydalanish imkonini beradi.
+* Moliyaviy stressni kamaytirib, talabaga o‘qish va universitet hayotiga ko‘proq e’tibor qaratish imkonini beradi.
+
+## Stipendiyalarning universitetlar uchun foydalari
+
+Stipendiyalardan universitetlarning o‘zi ham sezilarli darajada manfaat ko‘radi. Bu talaba nuqtayi nazaridan har doim ham ko‘rinavermaydi.
+
+* Kuchliroq va xilma-xil nomzodlar bazasini shakllantiradi, bu esa vaqt o‘tishi bilan akademik sifatni oshiradi.
+* Talabalar sonini barqaror saqlashga yordam beradi, ayniqsa umumiy ta’lim bozorida noaniqlik kuchaygan davrlarda.
+* Bitiruvchilar va donorlar bilan munosabatlarni mustahkamlaydi va kelajakdagi xayriya mablag‘lari uchun ijobiy tizim yaratishi mumkin.
+* Kuchliroq talabalar tarkibi orqali universitetning xalqaro reytingi va nufuzini oshirishga yordam beradi.
+* Ta’lim olish imkoniyatlarini kengaytirish va xilma-xillik bilan bog‘liq universitet yoki donor missiyalarini amalga oshirishga yordam beradi.
+* Kuchliroq nomzodlarni jalb qilish orqali ilmiy tadqiqotlar natijalarini va akademik raqobatbardoshlikni oshiradi.
+
+## Stipendiyalar haqidagi keng tarqalgan afsonalar
+
+Bir nechta noto‘g‘ri tushunchalar talabalarni hatto stipendiyalarga ariza topshirishdan ham to‘xtatib qo‘yadi. Aslida esa ularning aksariyati to‘g‘ri emas.
+
+* **“Stipendiyalar faqat a’lo baholarga ega talabalar uchun.”** — Ko‘plab stipendiyalar baholardan tashqari liderlik, jamoat faoliyati yoki muayyan qobiliyatlarni ham muhim mezon sifatida hisobga oladi.
+
+* **“Faqat qimmat va nufuzli universitetlar haqiqiy moliyaviy yordam beradi.”** — O‘rta darajadagi va kichikroq universitetlar ham kuchli nomzodlarni jalb qilish uchun saxiy stipendiyalar taklif qilishi mumkin.
+
+* **“Xalqaro talabalar katta miqdordagi moliyaviy yordam olish imkoniyatiga ega emas.”** — Ko‘plab yirik universitetlarda xalqaro talabalar uchun maxsus stipendiya dasturlari mavjud.
+
+* **“Qabul darajasi juda past, shuning uchun ariza topshirishning foydasi yo‘q.”** — Har yili ayrim stipendiya mablag‘lari talabalar ariza topshirmagani yoki mavjud imkoniyatlardan xabardor bo‘lmagani sababli o‘zlashtirilmay qoladi.
+
+* **“Bitta stipendiyaga ariza topshirishning o‘zi yetarli.”** — Faqat bitta stipendiyaga ariza topshiradigan talabalar kichikroq va kamroq tanilgan dasturlar orqali mavjud bo‘lgan moliyaviy imkoniyatlarni qo‘ldan boy berishi mumkin.
+   
+                    </p>
+                    <a href="maqola-linki.html" class="read-more">To‘liq o‘qish →</a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">Iyun 2026 • 5 Min Mutolaa</div>
                     <h2 class="article-title">Ichki Tashnalik Paradoksi: Nega Ishtiyoqimiz Birdan Alangalanib, Tezgina Soʻnadi?</h2>
-                    
-                    <div class="article-excerpt">
-                        Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida buni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek...
-                    </div>
+                    <p class="article-excerpt">
+                        Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida buni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek, oʻsha narsaga ruhiy tashnalikni his qiladi...
+                    </p>
+                    <a href="#" class="read-more">Toʻliq oʻqish →</a>
+                </article>
 
-                    <div class="full-content">
-                        <p>Har birimiz hayotimizda kamida bir marta gʻalati va takrorlanuvchi bir psixologik hodisaga duch kelganmiz. Rus tilida bu holatni oʻta aniqlik bilan “жажда” deb atashadi. Xoʻsh, aslida bu ichki tashnalik nima? “Жажда” — bu shunchaki oddiy xohish emas. Bu — inson ruhan yoki jismonan biron-bir maqsadga, oʻzgarishga yoki yutuqqa erishishni shunchalik xohlaydiki, xuddi sahrodagi odam suvga tashna boʻlganidek, oʻsha narsaga ruhiy tashnalikni his qiladi. Bu hissiyot xuddi koinotdagi ulkan yulduz portlashiga (supernovaga) oʻxshaydi: birdaniga ichingizda qandaydir yangi ishni boshlash yoki hayotingizni tubdan oʻzgartirish uchun ulkan energiya va shiddatli xohish paydo boʻladi.</p>
-                        <p>Bu oʻrinda haqli savol tugʻiladi: bu yaxshi hissiyotmi yoki yomon? Javob shuki, u ikki tigʻli pichoq kabidir. Bir tomondan, bu ajoyib hissiyot, chunki u — bizning ichki uygʻonishimiz, rivojlanishga boʻlgan potensial intilishimiz va qotib qolgan nuqtadan joyimizdan jilishimiz uchun eng kuchli start hisoblanadi. Tashnalik boʻlmasa, harakat ham boʻlmaydi. Ammo ikkinchi tomondan, u aldamchi va xavflidir. Agar bu hissiyot faqat hayollar va vaqtinchalik joʻshqinlik darajasida qolib ketsa, u insonni ruhan charchatadi. Har safar boshlangan ish chala qolganda, inson oʻziga boʻlgan ishonchni yoʻqota boshlaydi.</p>
-                        <p>Bu hodisa hayotimizning turli jabhalarida namoyon boʻladi va buning eng asosiy turtkilaridan biri — bizni qurshab turgan muhitdir (environment). Atrofingizda doim mutolaa qiladigan insonlarni koʻrsangiz, sizda ham kitob oʻqishga nisbatan kuchli tashnalik uygʻonadi; hayolingizda ulkan kutubxona yaratishni maqsad qilasiz. Atrofingizda muvaffaqiyatli tadbirkorlar yoki sportchilar paydo boʻlsa, darhol hayotingizni oʻzgartigingiz keladi. Biroq, tashqi muhit bergan emotsional turtki vaqtinchalik xarakterga ega boʻlib, ma’lum bir vaqt oʻtib dastlabki hissiyotlar oʻrnini kundalik mehnat egallaganida, oʻsha dastlabki joʻshqinlik kamayib boradi.</p>
-                        <p>Xoʻsh, nega bu emotsional tashnalikni intizomga aylantirish shunchalik muhim? Javob: Ha, bu mutlaqo shart va hayotiy zarurdir. Sababi, motivatsiya va ishtiyoq faqat dvigatelni oʻt oldirish uchun kerak, lekin mashinani manzilga olib boradigan narsa — bu intizom (discipline) va tizimdir. Agar siz ichki tashnalikni qat’iy intizomga aylantira olmasangiz, oʻsha shiddatli energiya vaqt oʻtishi bilan shunchaki sovib, kutilmagan umidsizlikka aylanadi. Olov qanchalik tez yongan boʻlsa, uning kuli ham shunchalik tez soviydi. Haqiqiy natija ishtiyoq eng yuqori nuqtaga chiqqanda emas, balki oʻsha ishtiyoq soʻnganidan keyin ham har kuni zerikarli va qiyin yumushlarni takrorlay olish qobiliyatida, ya’ni intizomda namoyon boʻladi.</p>
-                    </div>
-                </div>
-                
-                <button class="read-more" onclick="toggleArticle(this)">Toʻliq oʻqish ↓</button>
-            </article>
-
-            <article class="article-card" id="article-en">
-                <div>
-                    <div class="article-meta">June 4, 2026 • 5 Min Read</div>
-                    <h2 class="article-title"><i>The Paradox of Inner Thirst: Why Our Passions Flare Up and Fade Away </i></h2>
-                    
-                    <div class="article-excerpt" style="font-style: italic;">
+                <article class="article-card">
+                    <div class="article-meta">June 2026 • 5 Min Read</div>
+                    <h2 class="article-title"><i>The Paradox of Inner Thirst: Why Our Passions Flare Up and Fade Away</i></h2>
+                    <p class="article-excerpt">
                         At some point in our lives, we all experience a profound and recurring psychological phenomenon. In Russian, it is accurately captured by the word “жажда”. But what exactly is this inner thirst? “Жажда” is far more than a mere desire. It is an intense, almost visceral longing for a particular pursuit, goal, or transformation—comparable to the desperate thirst for water in a barren desert...
-                    </div>
+                    </p>
+                    <a href="#" class="read-more">Read Full Article →</a>
+                </article>
 
-                    <div class="full-content" style="font-style: italic;">
-                        <p>At some point in our lives, we all experience a profound and recurring psychological phenomenon. In Russian, it is accurately captured by the word “жажда”. But what exactly is this inner thirst? “Жажда” is far more than a mere desire. It is an intense, almost visceral longing for a particular pursuit, goal, or transformation—comparable to the desperate thirst for water in a barren desert. In my experience, this feeling mirrors a cosmic supernova: a sudden, overwhelming explosion of energy and intent that compels us to take on a new challenge or completely reshape our lives.</p>
-                        <p>This begs the question: is this a positive or a negative emotion? The truth is, it acts as a double-edged sword. On one hand, it is a magnificent force. It represents our internal awakening, our potential for growth, and the catalyst needed to push us out of stagnation. Without this initial thirst, momentum cannot exist. On the other hand, it is profoundly deceptive. If this intensity remains confined to fleeting excitement without being grounded in reality, it exhausts the mind. Each time a burning desire leaves a project unfinished, it chips away at our self-belief.</p>
-                        <p>This phenomenon manifests across various aspects of human life, and one of its most powerful catalysts is our surrounding environment. For instance, being surrounded by avid readers sparks an immediate, intense craving to dive into literature; we visualize buying grand bookshelves and filling them with knowledge. Similarly, being around entrepreneurs or fitness enthusiasts suddenly makes us want to launch businesses or adopt a rigorous lifestyle. The core challenge, however, is that external environmental stimuli are inherently temporary. Driven by initial excitement, we make a strong start, but as time passes and the novelty wears off, the initial rush fades, replaced by the mundane reality of daily effort.</p>
-                        <p>Why, then, is it so critical to transform this emotional thirst into structured discipline? The answer is an absolute yes. Motivation and emotional thirst are merely responsible for turning the ignition, but it is discipline that drives the vehicle to its ultimate destination. If you fail to convert that fleeting emotional thirst into consistency, that fiery energy inevitably turns into cold ash and bitter disappointment. True progress is not defined by how high your passion flares at the beginning, but by your ability to show up and do the work long after that initial rush has completely vanished.</p>
-                    </div>
-                </div>
-                
-                <button class="read-more" onclick="toggleArticle(this)">Read More ↓</button>
-            </article>
-
+            </div>
         </main>
 
         <footer>
             <p>&copy; 2026 charxpalak. Hamma huquqlar himoyalangan.</p>
         </footer>
     </div>
-
-   <script>
-function toggleArticle(btn) {
-    const card = btn.closest('.article-card');
-    if (!card) return;
-
-    const fullContent = card.querySelector('.full-content');
-    if (!fullContent) return;
-
-    const isExpanded = card.classList.contains('expanded');
-
-    if (isExpanded) {
-        // Yopish
-        card.classList.remove('expanded');
-        btn.textContent = btn.textContent.includes('Read') ? 'Read More ↓' : "To'liq o'qish ↓";
-        
-        // Sahifa sakrab ketmasligi uchun
-        const cardPosition = card.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-            top: cardPosition - 20,  // biroz yuqoridan joylashtiradi
-            behavior: 'smooth'
-        });
-    } else {
-        // Ochish
-        card.classList.add('expanded');
-        btn.textContent = btn.textContent.includes('Read') ? 'Close ↑' : 'Yopish ↑';
-    }
-}
-</script>
-</script>
 
 </body>
 </html>
